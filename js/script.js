@@ -18,6 +18,15 @@
 
 // img 5)
 // https://3.bp.blogspot.com/-eilZTdgbWPA/XFUltCS4Z1I/AAAAAAAABz0/feDxTa3Emtsb3Wx4xxu0hWnFrohqtwQfwCKgBGAs/w1920-h1080-c/mountain-lake-scenery-nature-cottage-25-4K.jpg
+var x = document.getElementById("myAudio");
+
+
+function playAudio() { 
+    x.play(); 
+} 
+function pauseAudio() { 
+x.pause(); 
+} 
 
 var app = new Vue(
     {
@@ -54,7 +63,7 @@ var app = new Vue(
                 const self = this;
                 interval = setInterval(function() {
                     self.nextImage();
-                }, 3000);
+                }, 2000);
             },
             stopSlider: function() {
                 clearInterval(interval);
@@ -65,3 +74,5 @@ var app = new Vue(
         }
     }
 );
+
+

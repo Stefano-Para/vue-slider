@@ -10,44 +10,59 @@
         <title>VUE slider by Para</title>
     </head>
     <body>
+     
+        <audio id="myAudio">            
+            <source src="audio/salamisound-1454157-birds-in-the-forest-with-a.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          
+        
+        
 
-        <embed name="GoodEnough" src="mp3/rainforest_ambience-GlorySunz-1938133500.mp3" loop="false" hidden="true" autostart="true">
         <main>
+            <button onclick="playAudio()" type="button">Play Audio</button>
+            <button onclick="pauseAudio()" type="button">Pause Audio</button> 
+            
 
             <!--  container -->
-            <div id="root" class="container">
+            <div id="root">
 
-                <!-- left chevron  -->
-                <i class="fas chevron-prev fa-chevron-left"
-                @click="prevImage"></i>
-
-                <!-- img  -->
-                <img :src="images[imageIndex]" alt="Paesaggi">
-
-                <!-- right chevron  -->
-                <i class="fas chevron-next fa-chevron-right" @click="nextImage"></i>
-
-                <!-- container dots  -->
-                <div class="container_dots">
-                    
-                    <!-- dots  -->
-                    <!-- nel v-for posso metter qualunque cosa al posto di image, ma mettendo image sto creando una var image in un ciclo for di images così capisco meglio  -->
-                    <i
-                    ciclo su cui si basa 
-                    v-for="(image, index) in images" class="far dot fa-circle"
-                    :class="(index == imageIndex) ? 'fas' : 'far'"
-                    @click="imageIndex = index"
-                    ></i>
-                    <!-- IMPORTANTE! L'index == imageIndex fa in modo di creare la mia condizione IF con risposta SE VERO ALLORA CAMBIA la class in FAS, se falso cambia in FAR  -->
-
-                </div>
-
-                <button @click="startSlider">Start</button>
-                <button @click="stopSlider">Stop</button>
                 
+                <div class="huge_wrap">
+                    <button id="button_start" @click="startSlider">Start Slide</button>
+                    <button id="button_stop" @click="stopSlider">Stop Slide</button>
 
-            </div>  
-            
+                    <div class="container">
+
+                        
+
+                        <!-- left chevron  -->
+                        <i class="fas chevron-prev fa-chevron-left"
+                        @click="prevImage"></i>
+
+                        <!-- img  -->
+                        <img :src="images[imageIndex]" alt="Paesaggi">
+
+                        <!-- right chevron  -->
+                        <i class="fas chevron-next fa-chevron-right" @click="nextImage"></i>
+
+                        <!-- container dots  -->
+                        <div class="container_dots">
+                            
+                            <!-- dots  -->
+                            <!-- nel v-for posso metter qualunque cosa al posto di image, ma mettendo image sto creando una var image in un ciclo for di images così capisco meglio  -->
+                            <i
+                            ciclo su cui si basa 
+                            v-for="(image, index) in images" class="far dot fa-circle"
+                            :class="(index == imageIndex) ? 'fas' : 'far'"
+                            @click="imageIndex = index"
+                            ></i>
+                            <!-- IMPORTANTE! L'index == imageIndex fa in modo di creare la mia condizione IF con risposta SE VERO ALLORA CAMBIA la class in FAS, se falso cambia in FAR  -->
+
+                        </div>
+                    </div>  <!-- chiusura root  -->
+                </div> <!--  chiusura mega wrap  -->
+             </div> <!-- chiusura #root  -->
             
         </main>
         
