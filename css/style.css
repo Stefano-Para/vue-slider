@@ -4,13 +4,38 @@
     padding: 0;
 }
 body {
+    width: 100%;
+    height: 100vh;
+}
+main {
     background-color: orange;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
-#container {
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+}
+.container img {
+    padding: 0 25px;
     width: 600px;
     height: 400px;
-    align-items: center;
-    justify-content: center;
-    background-color: orangered;
+    border-radius: 8%;
+    display: inline-block;
+}
+i.chevron {
+    color: black;
+    font-size: 3em;
+}
+.container_dots {
+    position: absolute;
+    color: white;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
 }
