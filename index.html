@@ -11,6 +11,7 @@
     </head>
     <body>
 
+        <embed name="GoodEnough" src="mp3/rainforest_ambience-GlorySunz-1938133500.mp3" loop="false" hidden="true" autostart="true">
         <main>
 
             <!--  container -->
@@ -37,11 +38,12 @@
                     :class="(index == imageIndex) ? 'fas' : 'far'"
                     @click="imageIndex = index"
                     ></i>
-
                     <!-- IMPORTANTE! L'index == imageIndex fa in modo di creare la mia condizione IF con risposta SE VERO ALLORA CAMBIA la class in FAS, se falso cambia in FAR  -->
 
-                
                 </div>
+
+                <button @click="startSlider">Start</button>
+                <button @click="stopSlider">Stop</button>
                 
 
             </div>  

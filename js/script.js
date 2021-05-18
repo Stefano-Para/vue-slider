@@ -24,7 +24,6 @@ var app = new Vue(
         el: '#root',
         data: {
             images: [
-
                 "https://wallpaperaccess.com/full/31189.jpg",
 
                 "https://3.bp.blogspot.com/-eilZTdgbWPA/XFUltCS4Z1I/AAAAAAAABz0/feDxTa3Emtsb3Wx4xxu0hWnFrohqtwQfwCKgBGAs/w1920-h1080-c/mountain-lake-scenery-nature-cottage-25-4K.jpg",
@@ -36,8 +35,8 @@ var app = new Vue(
                 "https://wallpapercave.com/wp/wp2033303.jpg"                
             ],
             imageIndex: 0,
+            interval: null,
         }, // chiusura data
-
         methods: {
             nextImage: function () {
                 this.imageIndex++;
@@ -47,13 +46,22 @@ var app = new Vue(
             },
             prevImage: function () {
                 this.imageIndex--;
-                if (this.imageIndex <= 0) {
+                if (this.imageIndex == -1) {
                     this.imageIndex = this.images.length - 1;
                 }
+            },
+            startSlider: function() {
+                const self = this;
+                interval = setInterval(function() {
+                    self.nextImage();
+                }, 3000);
+            },
+            stopSlider: function() {
+                clearInterval(interval);
             }
-        }  // chiusura methods 
-        
+        },  // chiusura methods 
+        created: function() {
+            // this.startSlider();
+        }
     }
 );
-
-    
