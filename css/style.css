@@ -28,14 +28,21 @@ main {
     border-radius: 8%;
     display: inline-block;
 }
-i.chevron {
+i.chevron-prev,
+i.chevron-next {
     color: black;
     font-size: 3em;
 }
 .container_dots {
+    background-color: rgba(0,0,0,0.5);
+    padding: 10px;
+    border-radius: 15px;
     position: absolute;
     color: white;
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
+}
+i.dot {
+    padding: 0 5px;
 }

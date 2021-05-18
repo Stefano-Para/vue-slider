@@ -17,23 +17,29 @@
             <div id="root" class="container">
 
                 <!-- left chevron  -->
-                <i class="fas chevron fa-chevron-left"></i>
+                <i class="fas chevron-prev fa-chevron-left"
+                @click="prevImage"></i>
 
                 <!-- img  -->
-                <img src="https://3.bp.blogspot.com/-eilZTdgbWPA/XFUltCS4Z1I/AAAAAAAABz0/feDxTa3Emtsb3Wx4xxu0hWnFrohqtwQfwCKgBGAs/w1920-h1080-c/mountain-lake-scenery-nature-cottage-25-4K.jpg" alt="">
+                <img :src="images[imageIndex]" alt="Paesaggi">
 
                 <!-- right chevron  -->
-                <i class="fas chevron fa-chevron-right"></i>
+                <i class="fas chevron-next fa-chevron-right" @click="nextImage"></i>
 
                 <!-- container dots  -->
                 <div class="container_dots">
                     
                     <!-- dots  -->
-                    <i class="fas dot fa-circle"></i>
-                    <i class="far dot fa-circle"></i>
-                    <i class="far dot fa-circle"></i>
-                    <i class="far dot fa-circle"></i>
-                    <i class="far dot fa-circle"></i>
+                    <!-- nel v-for posso metter qualunque cosa al posto di image, ma mettendo image sto creando una var image in un ciclo for di images così capisco meglio  -->
+                    <i
+                    ciclo su cui si basa 
+                    v-for="(image, index) in images" class="far dot fa-circle"
+                    :class="(index == imageIndex) ? 'fas' : 'far'"
+                    @click="imageIndex = index"
+                    ></i>
+
+                    <!-- IMPORTANTE! L'index == imageIndex fa in modo di creare la mia condizione IF con risposta SE VERO ALLORA CAMBIA la class in FAS, se falso cambia in FAR  -->
+
                 
                 </div>
                 
